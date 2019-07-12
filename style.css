@@ -1,0 +1,457 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 0.625rem;
+  font-family: "Lato", sans-serif;
+}
+
+.game {
+  height: 100vh;
+  background-image: url(IMG/background.jpg);
+  background-size: cover;
+  background-position: 25%;
+}
+
+.game.on {
+  padding-bottom: 20px;
+  height: auto;
+}
+
+.game__title {
+  padding: 35px 10px;
+  text-align: center;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.box-category {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 65vh;
+}
+
+.box-category.on {
+  display: none;
+}
+
+.box-category__title {
+  padding: 15px;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background-color: #5656567a;
+  color: #d4957a;
+  text-shadow: 0px 0 4px #000000, 0px 0 4px black;
+}
+
+.box-category__herbs,
+.box-category__fruits,
+.box-category__vegetables {
+  border: 2px solid black;
+  width: 65%;
+  height: 11vh;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  line-height: 11vh;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: #d4957a;
+  color: black;
+}
+
+.box-game {
+  display: none;
+}
+
+.box-game.on {
+  display: block;
+}
+
+.box-letters {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed black;
+  padding: 10px;
+  margin: 0 auto;
+  width: 90%;
+  background-color: #dbe0b0;
+}
+
+.letter {
+  border: 1px solid gray;
+  margin: 6px;
+  width: 12vw;
+  height: 12vw;
+  text-align: center;
+  line-height: 12vw;
+  font-size: 1.7rem;
+  transition: 0.3s;
+}
+
+.letter:hover,
+.letter.on {
+  background-color: #c3a698;
+  color: white;
+}
+
+.loss-moves {
+  margin: 30px auto;
+  padding: 10px;
+  width: 90%;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #e6aa8f;
+}
+
+.box-word {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+  border: 1px solid black;
+  width: 85%;
+  height: 10vh;
+  background-color: #dbe0b0;
+}
+
+.word-letter {
+  margin: 8px;
+  border-bottom: 2px solid black;
+  width: 6vw;
+  height: 7vw;
+  font-size: 1.7rem;
+  text-align: center;
+}
+
+.info-result.on {
+  padding: 10px;
+  margin: 0 auto;
+  width: 80%;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: #e6aa8f;
+}
+
+.image-loss-moves {
+  display: block;
+  margin: 20px auto;
+  width: 90%;
+}
+
+/* RESPONSIVE */
+
+/* mobile */
+
+@media (min-width: 480px) {
+  .game__title {
+    padding: 40px 10px;
+    font-size: 2.7rem;
+  }
+
+  .box-category__title {
+    padding: 15px 35px;
+    font-size: 2rem;
+    letter-spacing: 3px;
+  }
+
+  .box-category__herbs,
+  .box-category__fruits,
+  .box-category__vegetables {
+    font-size: 1.9rem;
+    letter-spacing: 2px;
+  }
+
+  .box-letters {
+    width: 80%;
+  }
+
+  .loss-moves {
+    font-size: 1.6rem;
+  }
+
+  .box-word {
+    width: 80%;
+  }
+
+  .word-letter {
+    font-size: 1.9rem;
+  }
+}
+
+@media (min-width: 700px) {
+  .game__title {
+    padding: 50px 10px;
+    font-size: 2.9rem;
+  }
+
+  .box-category {
+    height: 60vh;
+  }
+
+  .box-category__title {
+    padding: 20px 45px;
+    font-size: 2.3rem;
+  }
+
+  .box-category__herbs,
+  .box-category__fruits,
+  .box-category__vegetables {
+    font-size: 2rem;
+    letter-spacing: 3px;
+  }
+
+  .letter,
+  .word-letter {
+    font-size: 2.4rem;
+  }
+
+  .loss-moves {
+    padding: 15px;
+    width: 80%;
+    font-size: 1.9rem;
+  }
+
+  .box-word {
+    height: 8vh;
+  }
+}
+
+/* landscape */
+
+@media (min-width: 480px) and (orientation: landscape) {
+  .box-category {
+    height: 70vh;
+    top: 25%;
+    transform: translateX(-50%);
+  }
+
+  .box-category__herbs,
+  .box-category__fruits,
+  .box-category__vegetables {
+    height: 12vh;
+  }
+
+  .box-category__title {
+    padding: 6px 25px;
+  }
+
+  .box-word {
+    height: 22vh;
+  }
+
+  .loss-moves {
+    width: 80%;
+    font-size: 1.9rem;
+  }
+
+  .letter,
+  .word-letter {
+    font-size: 2rem;
+  }
+
+  .info-result.on {
+    font-size: 1.9rem;
+  }
+}
+
+@media (min-width: 640px) and (orientation: landscape) {
+  .box-word {
+    height: 24vh;
+  }
+
+  .word-letter {
+    line-height: 7vw;
+  }
+
+  .letter,
+  .word-letter {
+    font-size: 2.4rem;
+  }
+}
+
+/* desktop & tablet */
+
+@media (min-width: 1024px) {
+  .game.on {
+    height: 100vh;
+  }
+
+  .game__title {
+    padding: 40px 10px;
+  }
+
+  .box-category {
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 40vh;
+  }
+
+  .box-category__title {
+    width: 100%;
+    text-align: center;
+  }
+
+  .box-category__herbs,
+  .box-category__fruits,
+  .box-category__vegetables {
+    flex-basis: 30%;
+    height: 15vh;
+    line-height: 15vh;
+    cursor: pointer;
+    transition: 0.8s;
+  }
+
+  .box-category__herbs:hover,
+  .box-category__fruits:hover,
+  .box-category__vegetables:hover {
+    background-color: #d47a54;
+    transform: scale(1.1);
+  }
+
+  .box-game.on {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .box-letters {
+    margin-left: 20px;
+    flex-basis: calc(50% - 20px);
+  }
+
+  .letter {
+    width: 7vw;
+    height: 7vw;
+    line-height: 7vw;
+    cursor: pointer;
+  }
+
+  .box-result {
+    flex-basis: 50%;
+  }
+
+  .box-word {
+    height: 12vh;
+  }
+
+  .word-letter {
+    width: 4vw;
+    height: 4vw;
+  }
+
+  .info-result.on {
+    padding: 20px;
+    font-size: 1.9rem;
+    letter-spacing: 2px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .game.open {
+    height: 110vh;
+  }
+
+  .box-category {
+    width: 70%;
+  }
+
+  .box-game.on {
+    margin-top: 20px;
+  }
+
+  .box-letters {
+    margin-left: 50px;
+    flex-basis: 40%;
+  }
+
+  .letter {
+    width: 5vw;
+    height: 5vw;
+    line-height: 5vw;
+  }
+
+  .box-word {
+    height: 14vh;
+  }
+
+  .word-letter {
+    font-size: 2.6rem;
+    line-height: 4vw;
+  }
+}
+
+@media (min-width: 1440px) {
+  .game__title {
+    padding: 50px 10px;
+  }
+
+  .box-game.on {
+    margin-top: 30px;
+  }
+
+  .box-category {
+    width: 60%;
+    height: 38vh;
+  }
+
+  .box-category__herbs,
+  .box-category__fruits,
+  .box-category__vegetables {
+    height: 14vh;
+    line-height: 14vh;
+    letter-spacing: 4px;
+  }
+
+  .box-letters {
+    margin-left: 95px;
+    flex-basis: 32%;
+  }
+
+  .letter {
+    width: 4vw;
+    height: 4vw;
+    line-height: 4vw;
+  }
+
+  .box-result {
+    margin-right: 50px;
+  }
+
+  .loss-moves {
+    padding: 20px;
+    font-size: 2.2rem;
+    letter-spacing: 3px;
+  }
+
+  .box-word {
+    height: 12vh;
+    margin: 40px auto;
+  }
+
+  .word-letter {
+    font-size: 2.9rem;
+  }
+}
