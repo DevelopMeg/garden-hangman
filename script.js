@@ -143,7 +143,9 @@ const addLetter = e => {
 
   for (let i = 0; i < randomWord.length; i++) {
     if (randomWord[i] == clickLetterTxt.toLowerCase()) {
-      placeWord[i].textContent = clickLetterTxt;
+      placeWord[i].innerHTML = `<p>${clickLetterTxt}</p>`;
+      placeWord[i].children[0].className = "word-letter__letter";
+
       winMove = true;
       winLetter++;
     }
