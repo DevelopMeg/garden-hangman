@@ -1,7 +1,19 @@
-## garden-hangman
+# garden-hangman
 
-This is the my interpretation game garden-hangman.
+> This is my old project (which doesn`t contain aspects I learned from feedback), but shows progress of my skills
 
-Game was created using HTML, CSS and JavaScript.
+#### This is my interpretation of the hangman game
 
-link: https://developmeg.github.io/garden-hangman/
+Link: https://developmeg.github.io/garden-hangman/
+
+---
+
+![screen categories](./screens/screen1.png)
+
+![screen game](./screens/screen2.png)
+
+## Technologies
+
+- HTML
+- CSS
+- JavaScript
